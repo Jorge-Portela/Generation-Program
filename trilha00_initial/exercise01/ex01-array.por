@@ -11,20 +11,41 @@ programa
 	funcao inicio()
 	{
 		/*Vector Declaration / Declaração de vetor */
-		inteiro vector[]={52,64,11,63,8,14,8,2,6,12}
-		inteiro i,n
+		inteiro i,k,paramater,vector[10]={52,64,11,63,18,14,8,2,6,12}
+		 
+		
+		
+		escreva("vetor ANTES da ordenação descrescente: ")
 
-		escreva("vector: ")
+		para(i=0;i<10;i++){
+			escreva(vector[i]," | ")			
+			
+			}
+		
 		
 		para (i=0;i<10;i++){
 			
-			n = vector[i]	
-			se(n < vector[i]) {
+			para(k=i+1;k<10;k++){
+			se(vector[k] < vector[i]) {
+				paramater = vector[i]
+				vector[i] = vector[k]
+				vector[k] = paramater
 				
-				escreva(vector[i]," | ")
-				}
+				 }	
+				
+				}	
+			}
+
+		escreva("\nvetor DEPOIS da ordenação descrescente:: ")
+		
+		para(i=0;i<10;i++){
+			
+			escreva(vector[i]," | ")	
 			
 			}
+
+		
+			
 			
 		
 		
@@ -35,9 +56,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 473; 
+ * @POSICAO-CURSOR = 436; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {vector, 14, 10, 6};
+ * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
- * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
+ * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz;
  */
