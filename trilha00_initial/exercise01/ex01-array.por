@@ -15,7 +15,7 @@ programa
 		 
 		
 		
-		escreva("vetor ANTES da ordenação descrescente: ")
+		escreva("vetor ANTES da ordenação decrescente: ")
 
 		para(i=0;i<10;i++){
 			escreva(vector[i]," | ")			
@@ -23,32 +23,25 @@ programa
 			}
 		
 		
-		para (i=0;i<10;i++){
-			
+		para (i=0;i<10;i++){	
 			para(k=i+1;k<10;k++){
 			se(vector[k] < vector[i]) {
 				paramater = vector[i]
 				vector[i] = vector[k]
 				vector[k] = paramater
 				
-				 }	
+				  }	
 				
 				}	
 			}
 
-		escreva("\nvetor DEPOIS da ordenação descrescente:: ")
+		escreva("\nvetor DEPOIS da ordenação decrescente: ")
 		
 		para(i=0;i<10;i++){
 			
 			escreva(vector[i]," | ")	
 			
 			}
-
-		
-			
-			
-		
-		
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -56,9 +49,8 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 436; 
+ * @POSICAO-CURSOR = 893; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
- * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz;
  */
