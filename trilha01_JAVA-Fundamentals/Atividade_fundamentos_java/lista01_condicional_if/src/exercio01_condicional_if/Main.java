@@ -5,6 +5,12 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
+		
+		/*
+		 * Faça um algoritmo em Java que leia 3 valores inteiros A, B e C e 
+		 * imprima na tela se a soma de A + B é maior, menor ou igual a C. 
+	     */
+		
 		Locale.setDefault(Locale.US);
 		Scanner leia = new Scanner(System.in);
 

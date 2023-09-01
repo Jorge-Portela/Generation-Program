@@ -12,6 +12,12 @@ public class Main {
 		 * se é a primeira doação (boolean). De acordo com as Regras para a doação, mostre na 
 		 * tela se o doador está Apto ou Não Apto para doar sangue. Veja os exemplos abaixo:
 		 * 
+		 * 18 a 69 pode doar
+		 * 
+		 * 18 a 59 pode doar pela primeira vez
+		 * 
+		 * 60 a 69 nao pode doar pela primeira vez
+		 * 
 		 */
 		
 		Locale.setDefault(Locale.US);
@@ -31,9 +37,13 @@ public class Main {
 		primeiraDoacao = leia.nextBoolean();
 		
 		
-		if(idade >= 18 && idade <= 59 ) {
-			System.out.println( doador + " não está apto para doar sangue!");
-		} 
+		if(idade >= 18 && idade <= 59) {
+			System.out.println( doador + " está apto para doar sangue!");
+		} else if (idade >= 60 && idade <= 69 && primeiraDoacao == false) {
+			System.out.println( doador + " está apto para doar sangue!");
+		} else  {
+			System.out.println( doador + " não está apto para doar sangue!");	
+		}
 		
 		
 		
