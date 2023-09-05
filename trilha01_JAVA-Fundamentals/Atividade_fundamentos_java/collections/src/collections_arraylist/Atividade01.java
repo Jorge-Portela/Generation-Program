@@ -38,6 +38,7 @@ public class Atividade01 {
 
 		}
 
+		
 		Collections.sort(cores);
 
 		System.out.println("\nOrdem alfabética: ");
