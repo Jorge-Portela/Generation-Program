@@ -15,6 +15,7 @@ public class Atividade04 {
 		 * Caso o número não seja encontrado, ele deverá exibir na tela a mensagem: O
 		 * número NN não foi encontrado!
 		 */
+		
 		Locale.setDefault(Locale.US);
 		Scanner leia = new Scanner(System.in);
 

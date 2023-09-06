@@ -15,8 +15,8 @@ public class Atividade01 {
 		 * teclado 5 cores e deverá adicioná-las individualmente no ArrayList. Em
 		 * seguida, faça o que se pede:
 		 * 
-		 * - Mostre na tela todas as cores que foram adicionadas. - Mostre na tela todas
-		 * as cores que foram adicionadas ordenadas em ordem crescente.
+		 * - Mostre na tela todas as cores que foram adicionadas. 
+		 * - Mostre na tela todas as cores que foram adicionadas ordenadas em ordem crescente.
 		 */
 
 		Locale.setDefault(Locale.US);
