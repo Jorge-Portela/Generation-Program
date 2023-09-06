@@ -1,4 +1,4 @@
-package atividade01_estrutura_de_dados;
+package estrutura_de_dados;
 
 import java.util.Iterator;
 import java.util.LinkedList;
