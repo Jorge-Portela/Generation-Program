@@ -1,10 +1,10 @@
 package collections_arraylist;
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Locale;
 import java.util.Scanner;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class Atividade03 {
 	public static void main(String[] args) {
@@ -25,7 +25,7 @@ public class Atividade03 {
 		
 		int input;
 		
-		Set<Integer> numero = new TreeSet<Integer>();
+		Set<Integer> numero = new HashSet<Integer>();
 		
 		System.out.println("Insira 10 número abaixo:");
 		for(int i = 0;i < 10; i++) {
