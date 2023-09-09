@@ -16,34 +16,34 @@ public class Atividade1_queue {
 		 *
 		 * 1: Adicionar um novo Cliente na fila. Deve solicitar o nome do Cliente. 
 		 * 2: Listar todos os Clientes na fila 
-		 * 3: Chamar (retirar) uma pessoa da fila 0: O
-		 * programa deve ser finalizado.
+		 * 3: Chamar (retirar) uma pessoa da fila 
+		 * 0: O programa deve ser finalizado.
 		 *
 		 * Caso a fila esteja vazia, o programa deverá informar que a fila está vazia ao
 		 * tentar retirar (chamar) um cliente da fila..
 		 */
-
 		Locale.setDefault(Locale.US);
 		Scanner leia = new Scanner(System.in);
 
 		int opcao, input;
 
 		Queue<String> clientes = new LinkedList<String>();
-		Iterator<String> iterator = clientes.iterator();
+		
+		
 
 		System.out.print("1: Adicionar Cliente na fila." 
 						+ "\n2: Listar todos os Clientes na fila"
 						+ "\n3: Chamar(retirar) uma pessoa da fila"
 						+ "\n0: O programa deve ser finalizado.");
 		System.out.println("\nDigite uma opção:");
-		input = leia.nextInt();
+		input = Integer.parseInt(leia.nextLine());
 		opcao = input;
 
 		while (opcao != 0) {
 
 			if (opcao == 1) {
 				System.out.print("\nDigite o nome:");
-				String addCliente = leia.next();
+				String addCliente = leia.nextLine();
 				clientes.add(addCliente);
 
 			} else if (opcao == 2) {
@@ -54,19 +54,24 @@ public class Atividade1_queue {
 				
 
 			} else if (opcao == 3) {
-				if (clientes.isEmpty()) {
+				if (clientes.poll()==null) {
 					System.out.println("A Fila está vazia!");
 				} else {
 					System.out.println("Fila:");
-					clientes.poll();
-					System.out.println(clientes);
+					Iterator<String> iterator = clientes.iterator(); 		
+					while(iterator.hasNext()) {		
+						
+						System.out.println(iterator.next());
+								
+					}
+					
 
 				}
 
 			}
 
 			System.out.print("\nDigite uma opção:");
-			input = leia.nextInt();
+			input = Integer.parseInt(leia.nextLine());
 			opcao = input;
 		}
 
