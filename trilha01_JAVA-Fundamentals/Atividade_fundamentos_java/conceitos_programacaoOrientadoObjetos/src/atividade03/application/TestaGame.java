@@ -9,10 +9,7 @@ public class TestaGame {
 		Produto secondGame= new Produto("FIFA 2021","PS5","SPORT",2020,319);
 		
 		firstGame.visualizar();
-		secondGame.visualizar();
-		
-		
-		
+		secondGame.visualizar();	
 	}
 
 

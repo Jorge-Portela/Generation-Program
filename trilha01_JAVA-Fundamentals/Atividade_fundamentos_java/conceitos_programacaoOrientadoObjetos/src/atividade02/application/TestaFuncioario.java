@@ -11,8 +11,6 @@ public class TestaFuncioario {
 		 Funcionario secondFuncioario = new Funcionario("Daiane Lima","Quimical Engineering","F",21,26581);
 		 
 		 firstFuncioario.vizualizar();
-		 secondFuncioario.vizualizar();
-		 
+		 secondFuncioario.vizualizar(); 
 	}
-
 }

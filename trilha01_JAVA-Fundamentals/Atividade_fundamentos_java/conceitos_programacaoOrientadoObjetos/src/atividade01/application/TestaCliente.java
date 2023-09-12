@@ -10,8 +10,5 @@ public class TestaCliente {
 	
 		firstCliente.vizualizar();
 		secondCliente.vizualizar();
-	
-	
 	}
-
 }
