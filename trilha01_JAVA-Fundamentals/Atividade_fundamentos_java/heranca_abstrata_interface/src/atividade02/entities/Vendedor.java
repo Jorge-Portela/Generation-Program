@@ -1,6 +1,6 @@
 package atividade02.entities;
 
-public class Vendedor extends Funcionario {
+public class Vendedor extends Funcionario implements Compliances {
 	private String localDeVenda;
 
 	public Vendedor(String nome, String posicao, String genero, int idade, int id, String localDeVenda) {
@@ -16,7 +16,19 @@ public class Vendedor extends Funcionario {
 		this.localDeVenda = localDeVenda;
 	}
 
-
+	
+	@Override
+	public void caixaEmail() {
+		System.out.println("Verificar a caixa de email as 7:40hs");
+		
+	}
+	
+	@Override
+	public void saudar() {
+		System.out.println("Olá! Seja bem vindo ao departamento");
+		
+	}
+	
 	@Override
 	public void visualizar() {
 		super.visualizar();

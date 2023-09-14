@@ -9,14 +9,18 @@ public abstract class Funcionario {
 	
 
 	public Funcionario(String nome, String posicao, String genero, int idade, int id) {	
-		 this.nome =nome ;
+		 this.nome = nome ;
 		 this.posicao = posicao;
 		 this.genero = genero;
 		 this.idade = idade;
 		 this.id = id;	
 	}
 
-
+	
+	public abstract void saudar();
+	
+	
+	
 
 	
 	public String getNome() {

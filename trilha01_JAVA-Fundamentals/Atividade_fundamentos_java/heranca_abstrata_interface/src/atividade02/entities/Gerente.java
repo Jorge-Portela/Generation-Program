@@ -1,6 +1,6 @@
 package atividade02.entities;
 
-public class Gerente extends Funcionario  {
+public class Gerente extends Funcionario implements Compliances {
 	private String nivelDeAcesso; 
 
 	public Gerente(String nome, String posicao, String genero, int idade, int id, String nivelDeAcesso) {
@@ -16,6 +16,17 @@ public class Gerente extends Funcionario  {
 		this.nivelDeAcesso = nivelDeAcesso;
 	}
 
+	@Override
+	public void caixaEmail() {
+		System.out.println("Verificar a caixa de email as 8:40hs");
+		
+	}
+	
+	@Override
+	public void saudar() {
+		System.out.println("Olá! Seja bem vindo ao departamento");
+		
+	}
 	
 	@Override
 	public void visualizar() {
@@ -23,5 +34,6 @@ public class Gerente extends Funcionario  {
 		System.out.println(" | Nivel de Acesso: " + this.nivelDeAcesso);
 		
 	}
+
 
 }
