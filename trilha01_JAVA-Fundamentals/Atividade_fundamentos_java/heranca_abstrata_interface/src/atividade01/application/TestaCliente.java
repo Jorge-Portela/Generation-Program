@@ -1,6 +1,7 @@
 package atividade01.application;
 
 import java.util.InputMismatchException;
+import java.util.Optional;
 import java.util.Scanner;
 
 import atividade01.entities.PessoaFisica;
@@ -12,6 +13,8 @@ public class TestaCliente {
 		
 		
 		Scanner leia = new Scanner(System.in);
+		
+		
 		
 		int input;
 		boolean loop = true;
@@ -63,6 +66,11 @@ public class TestaCliente {
 		
 		PessoaFisica pf1 = new PessoaFisica(nomeClientePessFisic,idClientePessFisic,idadeClientePessFisic,telClientePessFisic,cpfClientePessFisic,genereoClientePessFisic);
 		PessoaFisica pf2 = new PessoaFisica("Maria Cardoso",97,42,"44-9541871","032.789.123-21","F");
+		
+		Optional <?> checarNull = Optional.ofNullable(pf1);
+		if(checarNull.isEmpty()) {
+			System.out.println("Construtor vazio!");	
+		}
 		
 		PessoaJuridica pj1 = new PessoaJuridica("Flavio Dias",6351,25,"24-95413698 ","1230.0001.33214/9");
 		PessoaJuridica pj2 = new PessoaJuridica("Leonardo Ramos",147,31," " ,"5631.0001.9467/12");
