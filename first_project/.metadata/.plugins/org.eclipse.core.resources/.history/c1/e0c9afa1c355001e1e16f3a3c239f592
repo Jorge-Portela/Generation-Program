@@ -1,0 +1,12 @@
+package br.com.union_stonks.stocks;
+
+public abstract class StocksGeneral {
+	String companyName;
+	String companyTitle;
+	double valuation;
+	double stockPrice;
+	
+	
+	
+
+}
