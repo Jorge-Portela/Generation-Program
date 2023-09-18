@@ -1,0 +1,43 @@
+package br.com.union_stonks.stocks;
+
+public abstract class StocksGeneral {
+	String companyName;
+	String companyTitle;
+	double valuation;
+	double stockPrice;
+	
+	
+	
+	
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+	public String getCompanyTitle() {
+		return companyTitle;
+	}
+	public void setCompanyTitle(String companyTitle) {
+		this.companyTitle = companyTitle;
+	}
+	public double getValuation() {
+		return valuation;
+	}
+	public void setValuation(double valuation) {
+		this.valuation = valuation;
+	}
+	public double getStockPrice() {
+		return stockPrice;
+	}
+	public void setStockPrice(double stockPrice) {
+		this.stockPrice = stockPrice;
+	}
+	
+	
+	
+	
+	
+	
+
+}
