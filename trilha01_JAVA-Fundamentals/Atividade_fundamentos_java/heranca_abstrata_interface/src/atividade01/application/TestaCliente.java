@@ -1,6 +1,8 @@
 package atividade01.application;
 
+import java.util.Arrays;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -19,6 +21,8 @@ public class TestaCliente {
 		int input;
 		boolean loop = true;
 		int idadeClientePessFisic = 0;
+		
+		
 		
 		
 		System.out.println("Cliente Nome: ");
@@ -74,6 +78,11 @@ public class TestaCliente {
 		
 		PessoaJuridica pj1 = new PessoaJuridica("Flavio Dias",6351,25,"24-95413698 ","1230.0001.33214/9");
 		PessoaJuridica pj2 = new PessoaJuridica("Leonardo Ramos",147,31," " ,"5631.0001.9467/12");
+		
+		
+		List<PessoaFisica> pfList = Arrays.asList(pf1, pf2);
+
+		pfList.stream().filter(pf -> pf.idade() > 18).forEach(pf -> System.out.println(pf.nome()));
 		
 		System.out.println("Dados Pessoa Física:");
 		pf1.visualizar();
