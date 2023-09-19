@@ -9,6 +9,9 @@ public class PessoaJuridica extends Cliente {
 		
 	}
 	
+	
+	
+	
    
 	
 	public String getCnpj() {
