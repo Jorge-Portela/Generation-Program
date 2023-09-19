@@ -18,13 +18,12 @@ public class TestaConta {
 		
 	
 		
-		int agenciaCorrente=0;
-		int numeroCorrente=0;
-		int agenciaPoupanca=0;
-	    int numeroPoupanca=0;
+		int agencia=0;
+		int numero=0;
+	
 		
-		ContaCorrente cc = new ContaCorrente(agenciaCorrente, numeroCorrente);
-		ContaPoupanca cp = new ContaPoupanca(agenciaPoupanca, numeroPoupanca);
+		ContaCorrente cc = new ContaCorrente(agencia, numero);
+		ContaPoupanca cp = new ContaPoupanca(agencia, numero);
 		
 		List<Conta> contas = new ArrayList<>();
 
@@ -62,41 +61,49 @@ public class TestaConta {
 				
 				if(tipoConta == 1) {
 					System.out.println("INSIRA AGÊNCIA:");
-					agenciaCorrente = leia.nextInt();
+					agencia = leia.nextInt();
 					System.out.println("INSIRA NÚMERO:");
-					numeroCorrente = leia.nextInt();
+					numero = leia.nextInt();
 					
 					
 				}else if(tipoConta == 2){
 					System.out.println("INSIRA AGÊNCIA:");
-					agenciaPoupanca = leia.nextInt();
+					agencia = leia.nextInt();
 					System.out.println("INSIRA NÚMERO:");
-					numeroPoupanca = leia.nextInt();
+					numero = leia.nextInt();
 				}
+				
+				
+				Conta contaNova = criarConta(tipoConta, agencia, numero);
+                contas.add(contaNova);
 				
 				break;
 				
 			case 2:
-				System.out.println("SAQUE\n");
-				System.out.println("TIPO DE CONTA (1 - CORRENTE / 2 - POUPANÇA)");
-				int tipoContaSaque = leia.nextInt();
-				
-				if(tipoContaSaque == 1) {
-					System.out.println("VALOR DO SAQUE: ");
-					double saqueCorrente = leia.nextDouble();
-					cc.saque(saqueCorrente);
-					
-					System.out.println(cc);
-					
-					
-				}else if(tipoContaSaque == 2){
-					System.out.println("VALOR DO SAQUE: ");
-					double saquePoupanca = leia.nextDouble();
-					cp.saque(saquePoupanca);
-					
-					System.out.println(cp);
-				}
-				break;
+			    System.out.println("SAQUE\n");
+			    System.out.println("TIPO DE CONTA (1 - CORRENTE / 2 - POUPANÇA)");
+			    int tipoContaSaque = leia.nextInt();
+
+			    if (tipoContaSaque == 1) {
+			        System.out.println("VALOR DO SAQUE: ");
+			        double saqueCorrente = leia.nextDouble();
+			        try {
+			            cc.saque(saqueCorrente);
+			            System.out.println(cc);
+			        } catch (SaldoInsuficienteException e) {
+			            System.out.println("Saldo insuficiente para efetuar o saque.");
+			        }
+			    } else if (tipoContaSaque == 2) {
+			        System.out.println("VALOR DO SAQUE: ");
+			        double saquePoupanca = leia.nextDouble();
+			        try {
+			            cp.saque(saquePoupanca);
+			            System.out.println(cp);
+			        } catch (SaldoInsuficienteException e) {
+			            System.out.println("Saldo insuficiente para efetuar o saque.");
+			        }
+			    }
+			    break;
 			case 3:
 				System.out.println("DEPOSITO\n");
 				System.out.println("TIPO DE CONTA (1 - CORRENTE / 2 - POUPANÇA)");
@@ -105,13 +112,13 @@ public class TestaConta {
 				if(tipoContaDeposito == 1) {
 					System.out.println("VALOR DO DEPOSITO: ");
 					double depositoCorrente = leia.nextDouble();
-					cc.saque(depositoCorrente);
+					cc.deposito(depositoCorrente);
 					
 					
 				}else if(tipoContaDeposito == 2){
 					System.out.println("VALOR DO DEPOSITO: ");
 					double depositoPoupanca = leia.nextDouble();
-					cp.saque(depositoPoupanca);
+					cp.deposito(depositoPoupanca);
 				}
 				break;
 			case 4:
@@ -153,5 +160,17 @@ public class TestaConta {
 		leia.close();
 
 	}
+	
+	public static Conta criarConta(int tipo, int agencia, int numero) {
+        Conta novaConta;
+        if (tipo == 1) {
+            novaConta = new ContaCorrente(agencia, numero);
+        } else if (tipo == 2) {
+            novaConta = new ContaPoupanca(agencia, numero);
+        } else {
+            novaConta = null; 
+        }
+        return novaConta;
+    }
 
 }
