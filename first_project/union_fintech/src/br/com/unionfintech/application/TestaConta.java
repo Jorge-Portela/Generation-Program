@@ -1,16 +1,22 @@
 package br.com.unionfintech.application;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
+import br.com.unionfintech.gestao.Conta;
 import br.com.unionfintech.gestao.ContaCorrente;
 import br.com.unionfintech.gestao.ContaPoupanca;
 import br.com.unionfintech.gestao.SaldoInsuficienteException;
+import br.com.unionfintech.gestao.util.Cores;
 
 public class TestaConta {
 
 	public static void main(String[] args) throws SaldoInsuficienteException {
 		
 		Scanner leia = new Scanner(System.in);
+		
+	
 		
 		int agenciaCorrente=0;
 		int numeroCorrente=0;
@@ -20,29 +26,36 @@ public class TestaConta {
 		ContaCorrente cc = new ContaCorrente(agenciaCorrente, numeroCorrente);
 		ContaPoupanca cp = new ContaPoupanca(agenciaPoupanca, numeroPoupanca);
 		
-		System.out.println("||========================||  ");
+		List<Conta> contas = new ArrayList<>();
+
+		contas.add(cc);
+		contas.add(cp);
+		
+		System.out.println(Cores.TEXT_GREEN_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND +
+				"||========================||  ");
 		System.out.println("||       UNION BANK       ||");
 		System.out.println("||========================||  ");
 		System.out.println("||    1 - Criar Conta     ||");
 		System.out.println("||    2 - Sacar           ||");
 		System.out.println("||    3 - Depositar       ||");
 		System.out.println("||    4 - Transferência   ||");
-		System.out.println("||    5 - Sair            ||");
+		System.out.println("||    5 - Mostrar Contas  ||");
+		System.out.println("||    6 - Sair            ||");
 		System.out.println("||========================||");
-		System.out.print("    SELECIONE A OPÇÃO: ");
+		System.out.print("      SELECIONE A OPÇÃO: ");
 		int opcao = leia.nextInt();
 		
 		
 		
 		
-		while(opcao < 5) {
+		while(opcao < 7) {
 			
 			
 			
 			switch(opcao) {
 			
 			case 1:
-				System.out.println("Criar Conta\n");
+				System.out.println("CRIAR CONTA\n");
 				
 				System.out.println("TIPO DE CONTA (1 - CORRENTE / 2 - POUPANÇA)");
 				int tipoConta = leia.nextInt();
@@ -64,7 +77,7 @@ public class TestaConta {
 				break;
 				
 			case 2:
-				System.out.println("Sacar\n");
+				System.out.println("SAQUE\n");
 				System.out.println("TIPO DE CONTA (1 - CORRENTE / 2 - POUPANÇA)");
 				int tipoContaSaque = leia.nextInt();
 				
@@ -85,7 +98,7 @@ public class TestaConta {
 				}
 				break;
 			case 3:
-				System.out.println("Depositar\n");
+				System.out.println("DEPOSITO\n");
 				System.out.println("TIPO DE CONTA (1 - CORRENTE / 2 - POUPANÇA)");
 				int tipoContaDeposito = leia.nextInt();
 				
@@ -102,10 +115,17 @@ public class TestaConta {
 				}
 				break;
 			case 4:
-				System.out.println("Transferência\n");
+				System.out.println("TRANSFERÊNCIA\n");
 				System.out.println("DIGITE VALOR DE TRANSFERÊNCIA: ");
 				double transferencia = leia.nextDouble();
 				cc.tranferencia(transferencia, cp);
+				break;
+				
+			case 5:
+				System.out.println("MOSTRAR CONTAS:\n");
+				for (Conta conta : contas) {
+				    System.out.println(conta);
+				}
 				break;
 			default:
 				
@@ -120,10 +140,11 @@ public class TestaConta {
 			System.out.println("||    2 - Sacar           ||");
 			System.out.println("||    3 - Depositar       ||");
 			System.out.println("||    4 - Transferência   ||");
-			System.out.println("||    5 - Sair            ||");
+			System.out.println("||    5 - Mostrar Contas  ||");
+			System.out.println("||    6 - Sair            ||");
 			System.out.println("||========================||");
 			
-			System.out.print("    SELECIONE A OPÇÃO: ");
+			System.out.print("      SELECIONE A OPÇÃO: ");
 			opcao = leia.nextInt();
 			
 		}

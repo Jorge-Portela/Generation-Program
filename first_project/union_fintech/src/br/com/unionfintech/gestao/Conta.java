@@ -2,7 +2,7 @@ package br.com.unionfintech.gestao;
 
 public abstract class Conta {
 	
-	protected double saldo;
+	protected double saldo = 100;
 	private int agencia;
     private int numero;
     private static int total = 0;
@@ -15,13 +15,21 @@ public abstract class Conta {
     	this.numero = numero;
     }
 
-    public abstract void deposito(double valor);
+    public void deposito(double valor) {
+        if (valor <= 0) {
+            System.out.println("O valor do depósito deve ser maior que zero.");
+            return;
+        }
+        this.saldo += valor;
+    }
+    
     
     public void saque(double valor) throws SaldoInsuficienteException {
-    	if(this.saldo < valor) {
-    		
-    	}
-    	this.saldo -= valor;
+    	if (this.saldo < valor) {
+            throw new SaldoInsuficienteException("Saldo insuficiente para efetuar o saque");
+        }
+        this.saldo -= valor;
+    	
     }
     
     public void tranferencia(double valor, Conta destino) throws SaldoInsuficienteException  {
