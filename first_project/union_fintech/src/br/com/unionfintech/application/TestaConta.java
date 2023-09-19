@@ -1,6 +1,7 @@
 package br.com.unionfintech.application;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -12,6 +13,8 @@ import br.com.unionfintech.gestao.util.Cores;
 
 public class TestaConta {
 
+	
+	
 	public static void main(String[] args) throws SaldoInsuficienteException {
 		
 		Scanner leia = new Scanner(System.in);
@@ -48,7 +51,7 @@ public class TestaConta {
 		
 		
 		
-		while(opcao < 8) {
+		while(opcao < 7) {
 			
 			
 			
@@ -77,7 +80,7 @@ public class TestaConta {
 				
 				Conta contaNova = criarConta(tipoConta, agencia, numero);
                 contas.add(contaNova);
-				
+                Collections.sort(contas);
 				break;
 				
 			case 2:
@@ -126,7 +129,7 @@ public class TestaConta {
 				System.out.println("TRANSFERÊNCIA\n");
 				System.out.println("DIGITE VALOR DE TRANSFERÊNCIA: ");
 				double transferencia = leia.nextDouble();
-				cc.tranferencia(transferencia, cp);
+				cc.transferencia(transferencia, cp);
 				break;
 				
 			case 5:
@@ -140,9 +143,7 @@ public class TestaConta {
 				System.out.println("VALOR DE ENCARGO: "+cc.getValorImposto());
 				
 				break;
-			default:
-				
-				System.out.println("Obrigado pela preferência!");
+			
 				
 			}
 			
@@ -164,20 +165,51 @@ public class TestaConta {
 		}
 		
 		
+		System.out.println("Obrigado pela preferência!");
+		
+		
+		
+		
+		
 		leia.close();
 
 	}
+
+	private static Conta criarConta(int tipoConta, int agencia, int numero) {
+		
+		return null;
+	}
 	
-	public static Conta criarConta(int tipo, int agencia, int numero) {
-        Conta novaConta;
-        if (tipo == 1) {
-            novaConta = new ContaCorrente(agencia, numero);
-        } else if (tipo == 2) {
-            novaConta = new ContaPoupanca(agencia, numero);
-        } else {
-            novaConta = null; 
-        }
-        return novaConta;
-    }
+//	public static Conta criarConta(int tipo, int agencia, int numero) {
+//        Conta novaConta;
+//        if (tipo == 1) {
+//            novaConta = new ContaCorrente(agencia, numero);
+//        } else if (tipo == 2) {
+//            novaConta = new ContaPoupanca(agencia, numero);
+//        } else {
+//            novaConta = null; 
+//        }
+//        return novaConta;
+//    }
+//	
+//	 public static Conta buscarContaPorNumero(List<Conta> contas, int numero) {
+//	        int inicio = 0;
+//	        int fim = contas.size() - 1;
+//
+//	        while (inicio <= fim) {
+//	            int meio = (inicio + fim) / 2;
+//	            Conta contaDoMeio = contas.get(meio);
+//
+//	            if (contaDoMeio.getNumero() == numero) {
+//	                return contaDoMeio; // Conta encontrada
+//	            } else if (contaDoMeio.getNumero() < numero) {
+//	                inicio = meio + 1;
+//	            } else {
+//	                fim = meio - 1;
+//	            }
+//	        }
+//
+//	        return null; // Conta Não ENCONTRADA
+//	    }
 
 }

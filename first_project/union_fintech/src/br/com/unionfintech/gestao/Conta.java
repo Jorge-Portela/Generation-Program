@@ -1,16 +1,16 @@
 package br.com.unionfintech.gestao;
 
-public abstract class Conta {
+public abstract class Conta implements Comparable <Conta> {
 	
-	protected double saldo = 100;
+	protected double saldo;
 	private int agencia;
     private int numero;
-    private static int total = 0;
+//  private static int total;
 		
     public Conta() {}
     
     public Conta(int agencia, int numero) {
-    	Conta.total++;
+//    	Conta.total++;
     	this.agencia = agencia;
     	this.numero = numero;
     }
@@ -32,7 +32,7 @@ public abstract class Conta {
     	
     }
     
-    public void tranferencia(double valor, Conta destino) throws SaldoInsuficienteException  {
+    public void transferencia(double valor, Conta destino) throws SaldoInsuficienteException  {
     	this.saque(valor);
     	destino.deposito(valor);
     }
@@ -43,4 +43,14 @@ public abstract class Conta {
    		return "Numero: " + this.numero + ", Agencia: " + this.agencia + ", Saldo: " + this.saldo;
    	}
 
+    @Override
+    public int compareTo(Conta outraConta) {
+        // Comparando número da conta
+        return Integer.compare(this.numero, outraConta.numero);
+    }
+
+	public int getNumero() {
+		
+		return numero;
+	}
 }
