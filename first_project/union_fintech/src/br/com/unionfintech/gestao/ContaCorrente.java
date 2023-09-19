@@ -1,6 +1,6 @@
 package br.com.unionfintech.gestao;
 
-public class ContaCorrente extends Conta{
+public class ContaCorrente extends Conta implements Tributos {
 	
 	
 	
@@ -16,6 +16,12 @@ public class ContaCorrente extends Conta{
 		double valorASacar = valor + 0.2;
 		super.saque(valorASacar);
 	}
+	
+	@Override
+	public double getValorImposto() {	
+		return super.saldo * 0.01;
+	}
+	
 
 	@Override
 	public void deposito(double valor) {

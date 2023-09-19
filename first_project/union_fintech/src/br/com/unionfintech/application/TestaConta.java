@@ -39,7 +39,8 @@ public class TestaConta {
 		System.out.println("||    3 - Depositar       ||");
 		System.out.println("||    4 - Transferência   ||");
 		System.out.println("||    5 - Mostrar Contas  ||");
-		System.out.println("||    6 - Sair            ||");
+		System.out.println("||    6 - Encargos        ||");
+		System.out.println("||    7 - Sair            ||");
 		System.out.println("||========================||");
 		System.out.print("      SELECIONE A OPÇÃO: ");
 		int opcao = leia.nextInt();
@@ -47,7 +48,7 @@ public class TestaConta {
 		
 		
 		
-		while(opcao < 7) {
+		while(opcao < 8) {
 			
 			
 			
@@ -134,6 +135,11 @@ public class TestaConta {
 				    System.out.println(conta);
 				}
 				break;
+				
+			case 6:
+				System.out.println("VALOR DE ENCARGO: "+cc.getValorImposto());
+				
+				break;
 			default:
 				
 				System.out.println("Obrigado pela preferência!");
@@ -148,7 +154,8 @@ public class TestaConta {
 			System.out.println("||    3 - Depositar       ||");
 			System.out.println("||    4 - Transferência   ||");
 			System.out.println("||    5 - Mostrar Contas  ||");
-			System.out.println("||    6 - Sair            ||");
+			System.out.println("||    6 - Encargos        ||");
+			System.out.println("||    7 - Sair            ||");
 			System.out.println("||========================||");
 			
 			System.out.print("      SELECIONE A OPÇÃO: ");
