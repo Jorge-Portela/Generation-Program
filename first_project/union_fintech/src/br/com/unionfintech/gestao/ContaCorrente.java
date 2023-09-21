@@ -4,7 +4,7 @@ public class ContaCorrente extends Conta implements Tributos {
 	
 	
 	
-	public ContaCorrente () {}
+	
 	
 	
 	public ContaCorrente (int agencia, int numero) {

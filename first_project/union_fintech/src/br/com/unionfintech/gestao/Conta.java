@@ -1,13 +1,13 @@
 package br.com.unionfintech.gestao;
 
-public abstract class Conta implements Comparable <Conta> {
+public abstract class Conta {
 	
 	protected double saldo;
 	private int agencia;
     private int numero;
 //  private static int total;
 		
-    public Conta() {}
+//    public Conta() {}
     
     public Conta(int agencia, int numero) {
 //    	Conta.total++;
@@ -43,11 +43,7 @@ public abstract class Conta implements Comparable <Conta> {
    		return "Numero: " + this.numero + ", Agencia: " + this.agencia + ", Saldo: " + this.saldo;
    	}
 
-    @Override
-    public int compareTo(Conta outraConta) {
-        // Comparando número da conta
-        return Integer.compare(this.numero, outraConta.numero);
-    }
+   
 
 	public int getNumero() {
 		

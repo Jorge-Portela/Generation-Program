@@ -80,7 +80,7 @@ public class TestaConta {
 				
 				Conta contaNova = criarConta(tipoConta, agencia, numero);
                 contas.add(contaNova);
-                Collections.sort(contas);
+              ;
 				break;
 				
 			case 2:
